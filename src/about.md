@@ -3,8 +3,7 @@ title: About me
 author: Tim Heidler
 tags:
   - about
-layout:
-  - article.njk
+layout: "article.njk"
 ---
 Hi, I'm Tim!
 
