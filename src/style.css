@@ -382,3 +382,17 @@ section,
   color: var(--clr-neutral-100);
   background-color: var(--clr-neutral-900);
 }
+
+/* //////////////////////
+  Form
+  /////////////////////// */
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-label{
+  width: 75vw;
+}
