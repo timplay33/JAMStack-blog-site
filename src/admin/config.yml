@@ -29,5 +29,5 @@ collections:
       - {label: "Author", name: "author", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list", default: ["about"] }
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "layout", name: "layout", widget: "list", default: ["article.njk"] }
+      - {label: "layout", name: "layout", widget: "string", default: "article.njk" }
       
