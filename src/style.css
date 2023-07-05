@@ -14,8 +14,8 @@
 
   --clr-primary-200: #343a40; /* featured Articles Backgroud*/
   --clr-primary-300: #008000; /* not in use */
-  --clr-primary-400: #008000; /* hover / focus */
-  --clr-primary-500: #38b000; /* titel / footer */
+  --clr-primary-400: #38b000; /* hover / focus */
+  --clr-primary-500: #008000;/* titel / footer */
 
   --clr-neutral-100: #212529; /* body bg / text footer + button */
   --clr-neutral-300: #6c757d; /* text accents */
@@ -226,7 +226,7 @@ section,
   --logo-color: currentColor;
   padding: 2em 0;
   color: var(--clr-neutral-100);
-  background-color: var(--clr-primary-500);
+  background-color: var(--clr-primary-400);
   text-align: center;
 }
 
@@ -387,16 +387,43 @@ section,
   Form
   /////////////////////// */
 
-#contact-form {
+.contact-form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 1rem;
+}
+.form-p{
+  width: 75vw;
 }
 
-.form-label{
+.form-input{
   width: 75vw;
+  background-color: rgb(43, 48, 53);
+  border: transparent;
+  color: var(--clr-neutral-900);
 }
 
 .hidden {
   display:none
+}
+
+.form-btn{
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+  padding: 0.75em 1.75em;
+  border-radius: 0.25em;
+  align-self: start;
+  justify-self: start;
+  background-color: var(--clr-primary-400);
+  border-color: transparent;
+}
+
+.form-btn:focus {
+  outline: 0.125em solid var(--clr-primary-500);
+  outline-offset: 0.25em;
+}
+.form-btn:hover{
+  background-color: var(--clr-primary-500);
 }
