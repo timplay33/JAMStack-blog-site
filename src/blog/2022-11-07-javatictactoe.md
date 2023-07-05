@@ -6,7 +6,7 @@ date: '2022-11-07T15:45:35+01:00'
 tags:
   - post
   - featured
-image: /assets/blog/225390707-f113922e-97e2-4e53-aef8-eedcaa2eae97.png
+image: /assets/blog/javatictactoe_img1.png
 imageAlt: picture of the program
 ---
 # JavaTicTacToe
