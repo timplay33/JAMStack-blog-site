@@ -396,3 +396,7 @@ section,
 .form-label{
   width: 75vw;
 }
+
+.hidden {
+  display:none
+}
