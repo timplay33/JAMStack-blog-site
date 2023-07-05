@@ -19,3 +19,14 @@ collections:
       - {label: "Image caption", name: "imageAlt", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
       
+  - name: "about" 
+    label: "About"
+    folder: "src"
+    create: true 
+    slug: "{{slug}}" 
+    fields: 
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list", default: ["about"] }
+      - {label: "Body", name: "body", widget: "markdown"}
+      
