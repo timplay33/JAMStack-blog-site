@@ -79,7 +79,7 @@ main{
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
-  color: var(--clr-txt);
+  color: var(--clr-txt-ACCENT);
 }
 
 /* Make images easier to work with */
