@@ -9,6 +9,8 @@ tags:
 image: /assets/blog/favicon.png
 imageAlt: "?"
 ---
+**Warning still in progress!!**
+
 ## Getting stared
 
 Before starting, you should make sure that the following requirements apply to you
