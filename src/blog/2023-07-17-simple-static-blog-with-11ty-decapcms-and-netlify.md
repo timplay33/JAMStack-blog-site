@@ -81,3 +81,17 @@ now that 11ty knows where the files you create will be. Let's create them. Start
 </body>
 </html>
 ```
+
+In the body tag, add a h1 headline with the main headline of your blog.
+
+```html
+<h1>hello, world</h1>
+```
+
+After wards, save the file and type the command **npm start** to start the web server of your blog. In the Terminal there should be a link displayed.
+
+![image of the terminal showing the link to the webpage](/assets/blog/simple_static_blog_img4.png)
+
+Paste the link into your browser and your h1 headline should be displayed on the page.
+
+![image of the h1 headline in the browser](/assets/blog/simple_static_blog_img5.png)
