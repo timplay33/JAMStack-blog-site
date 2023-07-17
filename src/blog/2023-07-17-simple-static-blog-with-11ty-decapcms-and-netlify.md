@@ -22,13 +22,13 @@ Start up your favorite code editor (in this Tutorial, I'll be using [VS Code](ht
 
 ![image of the Terminal tap](/assets/blog/simple_static_blog_img2.png)
 
-Now we want to tell Node.js more about our project, with the package.json. To create this file type the following command in the Terminal.
+Now we want to tell Node.js more about our project, with the package.json. To create this file, type the following command in the Terminal.
 
 ```shell
 npm init -y
 ```
 
-We also need 11ty to be installed in our project. which is done with the command:
+We also need 11ty to be installed in our project. Which is done with the command:
 
 ```shell
 npm install @11ty/eleventy --save-dev
@@ -38,4 +38,46 @@ Next up, open the package.json by clicking on it in the file explorer build into
 
 ![image of the package.js file](/assets/blog/simple_static_blog_img3.png)
 
- The package.json contains the basic information about your project, like the name, the version and also the commands the project runtime suports, listed under scripts. as you see there is only one command called test. we want to get rid of this command and create our own
+ The package.json contains the basic information about your project, like the name, the version and also the commands the project runtime supports, listed under scripts. As you see, there is only one command called test. We want to get rid of this command and create our own. Replace the test command with the following two commands.
+
+```json
+"start": "eleventy --serve",
+"build": "eleventy"
+```
+
+Start will be used during development, and build will be to build the page for the deployment.
+
+After that, we need to tell 11ty more about our project by creating a new file called "**.eleventy.js**" and pasting the following code block into it.
+
+```javascript
+ module.exports = function (eleventyConfig) {
+ 
+ // Return your Object options:
+  return {
+    dir: {
+      input: "src",
+      output: "public"
+    }
+  }
+};
+```
+
+The code block tells 11ty where the files you create will be (src directory) and where the build files will be (public directory).
+
+## Src directory and base.html file
+
+now that 11ty knows where the files you create will be. Let's create them. Starting with the most important file the "index.html" this file will be the landing page of your Blog. At first, create a folder in the directory of your project called "**src**" in this directory will be all your code. In this folder, create the "**index.html**" and add the standard html5 template code in it.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+```
