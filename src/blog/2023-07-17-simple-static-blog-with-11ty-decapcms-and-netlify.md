@@ -6,8 +6,8 @@ date: 2023-07-17T20:14:01.332Z
 tags:
   - post
   - featured
-image: /assets/blog/favicon.png
-imageAlt: "?"
+image: /assets/blog/simple_static_blog_img0.png
+imageAlt: logo of 11ty
 ---
 **Warning still in progress!!**
 
@@ -134,6 +134,6 @@ module.exports = function (eleventyConfig) {
 };
 ```
 
-Now the style should be applied 
+Now the style should be applied.
 
 ![image of the h1 headline in the browser with the style applied](/assets/blog/simple_static_blog_img6.png)
