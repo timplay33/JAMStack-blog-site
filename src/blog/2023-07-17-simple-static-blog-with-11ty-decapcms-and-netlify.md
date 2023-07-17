@@ -66,7 +66,7 @@ After that, we need to tell 11ty more about our project by creating a new file c
 
 The code block tells 11ty where the files you create will be (src directory) and where the build files will be (public directory).
 
-## Src directory and base.html file
+## Src directory and index.html file
 
 now that 11ty knows where the files you create will be. Let's create them. Starting with the most important file the "index.html" this file will be the landing page of your Blog. At first, create a folder in the directory of your project called "**src**" in this directory will be all your code. In this folder, create the "**index.html**" and add the standard html5 template code in it.
 
@@ -97,3 +97,43 @@ After wards, save the file and type the command **npm start** to start the web s
 Paste the link into your browser and your h1 headline should be displayed on the page.
 
 ![image of the h1 headline in the browser](/assets/blog/simple_static_blog_img5.png)
+
+## Adding style
+
+to add style to your Blog, create a new file called "**style.css**" in the src directory and link in your index.html to your style by adding
+
+```html
+<link rel="stylesheet" href="style.css">
+```
+
+between your head tags.
+
+In your style.css, you can then apply a style to your Blog. For now, we will make the background of the page black and the text white by adding the following code in your **style.css**.
+
+```css
+body{
+    background-color: black;
+    color: white;
+}
+```
+
+Do not worry that the page in your browser has not applied this style yet. The problem is, that we have not yet tolled 11ty that we are using a style. To do so, we have to edit our "**.eleventy.js**" file to add a PassthroughCopy of the style.css file.
+
+```
+module.exports = function (eleventyConfig) {
+
+  eleventyConfig.addPassthroughCopy("./src/style.css");
+  
+  // Return your Object options:
+  return {
+    dir: {
+      input: "src",
+      output: "public"
+    }
+  }
+};
+```
+
+Now the style should be applied 
+
+![image of the h1 headline in the browser with the style applied](/assets/blog/simple_static_blog_img6.png)
