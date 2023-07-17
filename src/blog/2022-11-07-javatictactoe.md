@@ -1,6 +1,6 @@
 ---
 title: JavaTicTacToe
-description: A simple TicTacToe game programmed in Java
+description: GUI creation in Java show on a simple TicTacToe game
 author: Tim Heidler
 date: 2022-11-07T15:45:35+01:00
 tags:
