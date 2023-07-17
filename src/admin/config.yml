@@ -1,6 +1,5 @@
 backend:
   name: git-gateway
-  repo: timplay33/JAMStack-blog-site
   branch: main
 publish_mode: editorial_workflow
 media_folder: "public/assets/blog" 
