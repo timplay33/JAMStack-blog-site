@@ -11,7 +11,7 @@
   --clr-accent-LIGHT: #65bacf; 
   --clr-accent-DARK: #1181B2;
   --clr-bg: #212221;
-  --clr-bg-featured-article: #212529; 
+  --clr-bg-accent: #212529; 
   --clr-txt: #DDEDF4; 
   --clr-txt-ACCENT: #65bacf; 
   --clr-txt-DARK: #212529;
@@ -80,6 +80,10 @@ main{
 a:not([class]) {
   text-decoration-skip-ink: auto;
   color: var(--clr-txt-ACCENT);
+}
+
+code{
+background: var(--clr-bg-accent);
 }
 
 /* Make images easier to work with */
@@ -253,7 +257,7 @@ section,
 }
 
 .featured-articles {
-  background-color: var(--clr-bg-featured-article);
+  background-color: var(--clr-bg-accent);
 }
 
 .articles__list {
