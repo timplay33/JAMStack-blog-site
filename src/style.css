@@ -395,7 +395,9 @@ section,
 .form-p{
   width: 75vw;
 }
-
+.form-btn{
+  margin-top: 1.5rem;
+}
 .form-input{
   width: 75vw;
   background-color: rgb(43, 48, 53);
