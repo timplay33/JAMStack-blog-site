@@ -23,3 +23,5 @@ This simple tic-tac-toe game features:
 * Calculating winner
 
 The game's source code as well as a build can be found on my GitHub. <https://github.com/timplay33/JavaTicTacToe>
+
+![image of x winning the game](/assets/blog/javatictactoe_img2.png)
