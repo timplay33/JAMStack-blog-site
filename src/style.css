@@ -82,8 +82,9 @@ a:not([class]) {
   color: var(--clr-txt-ACCENT);
 }
 
-code{
-background: var(--clr-bg-accent);
+pre{
+  background: var(--clr-bg-accent);
+  padding: 20px;
 }
 
 /* Make images easier to work with */
