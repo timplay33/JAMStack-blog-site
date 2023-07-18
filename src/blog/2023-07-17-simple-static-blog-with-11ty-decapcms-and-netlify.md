@@ -9,7 +9,7 @@ tags:
 image: /assets/blog/simple_static_blog_img0.png
 imageAlt: logo of 11ty
 ---
-**Warning still in progress!!**
+**Warning note that in some code blocks an ! is used to not execute the code, please remove before deploying!!**
 
 ## Getting stared
 
@@ -174,16 +174,16 @@ src/_includes/base.html
 </html>
 ```
 
-Now we need to modify this static code to be used as the base layout of your blog. Change the text in your title element to "**{{ title }}**". By doing so, 11ty knows that the variable title should be placed here. We also need to tell 11ty that the content of your pages should be placed in the body tag of your base.html. This is done by adding the following into your body tag. 
+Now we need to modify this static code to be used as the base layout of your blog. Change the text in your title element to "**{!{ title }}**" (please remove "!" before pasting). By doing so, 11ty knows that the variable title should be placed here. We also need to tell 11ty that the content of your pages should be placed in the body tag of your base.html. This is done by adding the following into your body tag. 
 
 body of src/_includes/base.html
 
 ```html
 <main>
-    {{ content }}
+    {!{ content }}
 </main>
 ```
-
+(please remove "!" before pasting)
 ### Modifying index.html to use the base layout
 
 in your index.html, we now need to remove the standard html5 template. In your index file should only remain the code you added into your body tag. For me, it's only the h1 headline.
@@ -244,19 +244,19 @@ The tags attribute is important for the next step. It allows you to later ask 11
 
 next up in your **blog.html** file, add the following code, which creates an unordered list with a list element for every blog entry that has the tag post in the information part.
 
-```html
+```html 
 <div>
   <h1>Recent articles</h1>
   <ul>
-    {%- for post in collections.post | reverse -%}
+    {!%- for post in collections.post | reverse -%}
     <li>
-      <a href="{{post.url}}"><h2>{{post.data.title}}</h2></a>
+      <a href="{!{post.url}}"><h2>{!{post.data.title}}</h2></a>
     </li>
-    {%- endfor -%}
+    {!%- endfor -%}
   </ul>
 </div>
 ```
-
+(please remove "!" before pasting)  
 Once saved, the blog page in your browser should update and show the title of your newly created post. Clicking the title brings you to a new page displaying the content of your post.
 
 ![image of the blog page displaying the newly created post](/assets/blog/simple_static_blog_img7.png)
@@ -346,14 +346,14 @@ collections:
     label: "Blog"
     folder: "src/blog"
     create: true 
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
+    slug: "{!{year}}-{!{month}}-{!{day}}-{!{slug}}" 
     fields: 
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list", default: ["post"] }
       - {label: "Body", name: "body", widget: "markdown"}
 ```
-
+(please remove "!" before pasting)  
 At the start of the file we are telling DecapCMS which backend we are going to use for us, it's going to be Netlify with GitHub. the next two lines declare the folder where our images for the articles are going to be. then we add a collection with the name of "**blog**" and a label of **Blog**. your blog articles are in the folder **src/blog**. we allow the CMS to create articles and say how to name the article files. The fields declare the data we want in the post.
 
 In the ".eleventy.js" file, we then have to allow the config.yml file. Simply add this line below the line for the style.css
