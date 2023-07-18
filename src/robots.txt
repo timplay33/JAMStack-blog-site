@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+Host: https://heidler.eu.org/
+
+Sitemap: https://heidler.eu.org/sitemap.xml
