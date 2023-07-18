@@ -179,7 +179,7 @@ body of src/_includes/base.html
 
 ```html
 <main>
-  {{ content }}
+  &lcub;&lcub; content &rcub;&rcub;
 </main>
 ```
 
@@ -249,11 +249,11 @@ next up in your **blog.html** file, add the following code, which creates an uno
 <div>
   <h1>Recent articles</h1>
   <ul>
-    {%- for post in collections.post | reverse -%}
+    &lcub;%- for post in collections.post | reverse -%&rcub;
     <li>
-      <a href="{{post.url}}"><h2>{{post.data.title}}</h2></a>
+      <a href="&lcub;&lcub;post.url&rcub;&rcub;"><h2>&lcub;&lcub;post.data.title&rcub;&rcub;</h2></a>
     </li>
-    {%- endfor -%}
+    &lcub;%- endfor -%&rcub;
   </ul>
 </div>
 
