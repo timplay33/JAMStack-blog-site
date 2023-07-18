@@ -87,6 +87,9 @@ a:not([class]) {
 pre{
   background: var(--clr-bg-accent);
   padding: 20px;
+  display: block;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
 }
 
 /* Make images easier to work with */
