@@ -233,9 +233,9 @@ tags: post
 layout: base.html
 ---
 
-fist post
+first post
 
-this is my fist post.
+this is my first post.
 ```
 
 The tags attribute is important for the next step. It allows you to later ask 11ty for all entries with this tag. The text you place below the 11ty information will be the text displayed, once the blog post is opened.
@@ -363,3 +363,31 @@ In the ".eleventy.js" file, we then have to allow the config.yml file. Simply ad
 ```javascript
 eleventyConfig.addPassthroughCopy("./src/admin/");
 ```
+
+### Authentication with Netlify
+
+Now head back over to the Netlify dashboard of your blog and click on "**site configuration**". In the sidebar, select "**Identity**" and "**Enable Identity**". under Registration, change the Registration preferences to **invite only**. Scroll down and enable Git Gateway.
+
+Head over to **Build & deploy** > **Post processing** and add the following code as a code injection before the closing head tag.
+
+```
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+```
+
+![Image of code injection](/assets/blog/simple_static_blog_img12.png)
+
+Next, head to the sidebar on the far left and Select **Integrations** > **Identity** and click on view in the Netlify Identity box. In the right top, you can **invite users** to enter your own e-mail address. In your mail, click on **Accept the invite**.
+
+![image of invitation](/assets/blog/simple_static_blog_img13.png)
+
+In the new window, set a password for your account.
+
+![image of password creation](/assets/blog/simple_static_blog_img14.png)
+
+Next up, go to the root of your blog site and add /admin to the end of the domain. The Content Manager from DecapCMS shroud appear, and you can start editing/creating new blog entries.
+
+![image of the DecapCMS interface](/assets/blog/simple_static_blog_img15.png)
+
+Thanks for reading!
+
+more of my stuff at [heidler.eu.org](https://heidler.eu.org/)
