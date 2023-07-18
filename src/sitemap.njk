@@ -7,11 +7,13 @@ eleventyExcludeFromCollections: true
     {% for page in collections.all %}
        {% if not page.data.draft %}
             {% if not "admin" in page.url %}
+            {% if not "404" in page.url %}
             <url>
                 <loc>{{ site.url }}{{ page.url | url }}</loc>
                 <lastmod>{{ page.date.toISOString() }}</lastmod>
                 <changefreq>{{ page.data.changeFreq if page.data.changeFreq else "monthly" }}</changefreq>
             </url>
+            {% endif%}
             {% endif%}
         {% endif %}
     {% endfor %}
