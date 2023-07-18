@@ -19,6 +19,7 @@ Before starting, you should make sure that the following requirements apply to y
 * Netlify account (can be created using your GitHub account)
 * a coding editor (for example VS Code)
 * Node.js installed on your PC
+* Git installed on your PC
 
 Start up your favorite code editor (in this Tutorial, I'll be using [VS Code](https://code.visualstudio.com/)) and open a folder, where you want to create your Blog. Next up, open a terminal in your folder. In VS Code, press on "Terminal" at the top of the program and then on "new Terminal".
 
@@ -261,3 +262,104 @@ Once saved, the blog page in your browser should update and show the title of yo
 ![image of the blog page displaying the newly created post](/assets/blog/simple_static_blog_img7.png)
 
 ![image of the contents of the blog post](/assets/blog/simple_static_blog_img8.png)
+
+## Publishing the blog
+
+Now that we have a basic blog site, let's publish it using GitHub and Netlify. go into your terminal in VS Code and stop the running task by pressing CTRL + C and accept it with "y".  First, we need a "**.gitignore**" file, which tells git which files should not be uploaded. Simply copy this standard ".gitignore" for 11ty.
+
+.gitignore
+
+```
+# dependencies installed by npm
+node_modules
+
+# build artefacts
+public
+css
+
+# secrets and errors
+.env
+.log
+
+# macOS related files
+.DS_Store
+```
+
+then initialize the git repository by typing the following in the terminal.
+
+```
+git init -b main
+```
+
+in the sidebar VS Code a modification will appear, click on in. in the new window type Initial commit in the text box and hit the Commit button. next up, the button says Publish Branch, hit the button again. 
+
+![image of VS Code commiting the repository](/assets/blog/simple_static_blog_img9.png)
+
+Select a name for the repository and select to set the repository **public**.
+
+### Adding the Blog to Netlify
+
+Next up Netlify! head over to [app.netlify.com](https://app.netlify.com/) and press the button: "Add new site" and select "Import existing project".
+
+![image of Netlify adding a new site](/assets/blog/simple_static_blog_img10.png)
+
+On the next page, select GitHub.
+
+![image of selection github](/assets/blog/simple_static_blog_img11.png)
+
+Login with the same GitHub account, on which you published the repository earlier, and select the repository in the following window. Next up are the build settings. On this window, it is important to input the **exact values** under basic build settings. For build command input the command we created earlier "**npm run build**" and for the publishing directory select "**public**". The Base directory should be left empty. Then hit "Deploy site". Once the site has been deployed a link will be shown, click on that link and your simple blog should be visible. This link is the link you can share with the world.
+
+## Adding DecapCMS
+
+Now that our basic blog site is online. Let's add a content management system (short CMS). To do so, create a new folder in the src directory called "**admin**". For DecapCMS to work, we need two files in this directory: an **index.html** and a **config.yml**. Let's start with the index.html by copying the following code found on the [DecapCMS site.](https://decapcms.org/)
+
+src/admin/index.html
+
+```html
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Content Manager</title>
+</head>
+<body>
+  <!-- Include the script that builds the page and powers Decap CMS -->
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+</body>
+</html>
+```
+
+Next up, we need to configure DecapCMS in your config.yml.
+
+src/admin/config.yml
+
+```editorconfig
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "public/assets/blog"
+public_folder: "/assets/blog" 
+collections:
+  - name: "blog" 
+    label: "Blog"
+    folder: "src/blog"
+    create: true 
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
+    fields: 
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list", default: ["post"] }
+      - {label: "Body", name: "body", widget: "markdown"}
+```
+
+At the start of the file we are telling DecapCMS which backend we are going to use for us, it's going to be Netlify with GitHub. the next two lines declare the folder where our images for the articles are going to be. then we add a collection with the name of "**blog**" and a label of **Blog**. your blog articles are in the folder **src/blog**. we allow the CMS to create articles and say how to name the article files. The fields declare the data we want in the post.
+
+In the ".eleventy.js" file, we then have to allow the config.yml file. Simply add this line below the line for the style.css
+
+.eleventy.js
+
+```javascript
+eleventyConfig.addPassthroughCopy("./src/admin/");
+```
