@@ -179,11 +179,9 @@ body of src/_includes/base.html
 
 ```html
 <main>
-  &lcub;&lcub; content &rcub;&rcub;
+  &#123;&#123; content &#125;&#125;
 </main>
 ```
-
- 
 
 ### Modifying index.html to use the base layout
 
@@ -249,14 +247,13 @@ next up in your **blog.html** file, add the following code, which creates an uno
 <div>
   <h1>Recent articles</h1>
   <ul>
-    &lcub;%- for post in collections.post | reverse -%&rcub;
+    &#123;%- for post in collections.post | reverse -%&#125;
     <li>
-      <a href="&lcub;&lcub;post.url&rcub;&rcub;"><h2>&lcub;&lcub;post.data.title&rcub;&rcub;</h2></a>
+      <a href="&#123;&#123;post.url&#125;&#125;"><h2>&#123;&#123;post.data.title&#125;&#125;</h2></a>
     </li>
-    &lcub;%- endfor -%&rcub;
+    &#123;%- endfor -%&#125;
   </ul>
 </div>
-
 ```
 
 Once saved, the blog page in your browser should update and show the title of your newly created post. Clicking the title brings you to a new page displaying the content of your post.
