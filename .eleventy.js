@@ -3,7 +3,7 @@ const { DateTime } = require("luxon");
 module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ 'src/robots.txt': '/robots.txt' });
-  eleventyConfig.addPassthroughCopy("./src/style.css");
+  eleventyConfig.addPassthroughCopy({ 'src/_includes/assets/css/global.css': './global.css' });
   eleventyConfig.addPassthroughCopy("./src/assets");
   eleventyConfig.addPassthroughCopy("./src/admin");
 
