@@ -183,7 +183,9 @@ body of src/_includes/base.html
     {!{ content }}
 </main>
 ```
+
 (please remove "!" before pasting)
+
 ### Modifying index.html to use the base layout
 
 in your index.html, we now need to remove the standard html5 template. In your index file should only remain the code you added into your body tag. For me, it's only the h1 headline.
@@ -244,7 +246,7 @@ The tags attribute is important for the next step. It allows you to later ask 11
 
 next up in your **blog.html** file, add the following code, which creates an unordered list with a list element for every blog entry that has the tag post in the information part.
 
-```html 
+```html
 <div>
   <h1>Recent articles</h1>
   <ul>
@@ -256,7 +258,8 @@ next up in your **blog.html** file, add the following code, which creates an uno
   </ul>
 </div>
 ```
-(please remove "!" before pasting)  
+
+(please remove "!" before pasting)\
 Once saved, the blog page in your browser should update and show the title of your newly created post. Clicking the title brings you to a new page displaying the content of your post.
 
 ![image of the blog page displaying the newly created post](/assets/blog/simple_static_blog_img7.png)
@@ -353,7 +356,8 @@ collections:
       - {label: "Tags", name: "tags", widget: "list", default: ["post"] }
       - {label: "Body", name: "body", widget: "markdown"}
 ```
-(please remove "!" before pasting)  
+
+(please remove "!" before pasting)\
 At the start of the file we are telling DecapCMS which backend we are going to use for us, it's going to be Netlify with GitHub. the next two lines declare the folder where our images for the articles are going to be. then we add a collection with the name of "**blog**" and a label of **Blog**. your blog articles are in the folder **src/blog**. we allow the CMS to create articles and say how to name the article files. The fields declare the data we want in the post.
 
 In the ".eleventy.js" file, we then have to allow the config.yml file. Simply add this line below the line for the style.css
@@ -390,4 +394,7 @@ Next up, go to the root of your blog site and add /admin to the end of the domai
 
 Thanks for reading!
 
-more of my stuff at [heidler.eu.org](https://heidler.eu.org/)
+\
+The finished project can be seen on my GitHub at <https://github.com/timplay33/simple-static-blog>
+
+[](https://github.com/timplay33/simple-static-blog)more of my stuff at [heidler.eu.org](https://heidler.eu.org/)
