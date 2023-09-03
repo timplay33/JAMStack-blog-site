@@ -1,20 +1,19 @@
-<form method="post" name="Contact Form" data-netlify-recaptcha="true" netlify-honeypot="hpfield" data-netlify="true" class="contact-form">
-    <h2>Contact Form</h2>
-    <input class="hidden" name="hpfield">
-    <p class="form-p">
-        <label for="name" class="form-label">Name:</label>
-        <input type="text" name="name" id="name" class="form-input">
-    </p>
-    <p class="form-p">
-        <label for="email" class="form-label">Email:</label>
-        <input type="email" name="email" id="email" class="form-input">
-    </p>
-    <p class="form-p">
-        <label for="message" class="form-label">Message:</label><br>
-        <textarea name="message" id="message" class="form-input  message"></textarea>
-    </p>
-    <div data-netlify-recaptcha="true"></div>
-    <p>
-        <input type="submit" class="form-btn btn btn-primary">
-    </p>
-</form>
+<div class="grid place-items-center">
+    <form id="contact" method="post" name="Contact Form" data-netlify-recaptcha="true" netlify-honeypot="hpfield" data-netlify="true" class="text-center sm:w-2/5">
+        <h2 class="text-xl font-bold">Contact Form</h2>
+        <input class="hidden" name="hpfield">
+        <p class="py-1">
+            <input type="text" name="name" id="name" placeholder="Name" class="input input-bordered w-full">
+        </p>
+        <p class="py-1">
+            <input type="email" name="email" id="email" placeholder="Email"  class="input input-bordered w-full">
+        </p>
+        <p class="py-1">
+            <textarea name="message" id="message" placeholder="Your Message" class="textarea textarea-bordered w-full textarea-lg"></textarea>
+        </p>
+        <div data-netlify-recaptcha="true"></div>
+        <p>
+            <input type="submit" class="btn btn-primary">
+        </p>
+    </form>
+</div>

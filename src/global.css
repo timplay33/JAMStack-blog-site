@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1 {
+	@apply text-primary;
+}
+h2 {
+	@apply text-secondary;
+}
+
+#markdown pre {
+	@apply mockup-code p-5 my-5;
+}
+#markdown img {
+	@apply my-5;
+}
+#markdown ul {
+	list-style-type: disc;
+	@apply m-5;
+}
+#markdown h2 {
+	@apply text-3xl font-bold my-5;
+}
+#markdown strong {
+	@apply text-primary-content;
+}
