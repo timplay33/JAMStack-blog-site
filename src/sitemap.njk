@@ -9,7 +9,7 @@ eleventyExcludeFromCollections: true
             {% if not "admin" in page.url %}
             {% if not "404" in page.url %}
             <url>
-                <loc>https://heidler.eu.org{{ page.url | url }}</loc>
+                <loc>https://heidler.site{{ page.url | url }}</loc>
                 <lastmod>{{ page.date.toISOString() }}</lastmod>
                 <changefreq>{{ page.data.changeFreq if page.data.changeFreq else "monthly" }}</changefreq>
             </url>
