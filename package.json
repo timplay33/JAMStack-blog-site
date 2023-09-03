@@ -8,8 +8,8 @@
     "build": "run-s build:*",
     "dev:11ty": "eleventy --serve",
     "dev:css": "tailwindcss -i src/global.css -o src/_includes/assets/css/global.css --watch --postcss",
-    "build:11ty": "eleventy",
-    "build:css": "tailwindcss -i src/global.css -o src/_includes/assets/css/global.css --postcss"
+    "build:css": "tailwindcss -i src/global.css -o src/_includes/assets/css/global.css --postcss",
+    "build:11ty": "eleventy"
   },
   "keywords": [],
   "author": "",
