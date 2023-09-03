@@ -2,13 +2,22 @@
 layout: "base.njk"
 ---
 
-<article class="main-article">
-  <div class="container container--narrow flow">
-    <h1 class="article-title">{{ title }}</h1>
-    <figure class="main-article__figure">
-      <img src="{{ image }}" alt="{{ imageAlt }}" />
-    </figure>
+<div class="hero min-h-full py-6 bg-base-200">
+  <div class="hero-content flex-col lg:flex-row">
+    <img src="{{ image }}" alt="{{ imageAlt }}" class="max-w-sm rounded-lg shadow-2xl"/>
+    <div>
+      <h1 class="text-5xl font-bold">{{ title }}</h1>
+      {%if date %}
+        <p class="py-6">{{description}}</p>
+        <p>by <span class="text-primary-content">{{author}}</span> on <span class="text-primary-content">{{date | postDate}}</span></p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<div class="flex justify-center">
+  <div id="markdown" class="w-4/5">
 
     {{ content | safe}}
+
   </div>
-</article>
+</div>

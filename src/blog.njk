@@ -3,14 +3,18 @@ title: Blog
 layout: 'base.njk'
 ---
 
-<div class="section container">
-<h1 class="section-title">Recent articles</h1>
-<ul class="articles__list flow">
+<div class="text-center py-6">
+  <div>
+    <h2 class="text-3xl font-bold">Recent articles</h2>
+  </div>
 
-  {%- for post in collections.post | reverse -%}
-    {% include "article-snippet.njk" %}
-  {%- endfor -%}
+  <div class="flex flex-row flex-wrap justify-center">
+    {%- for post in collections.post | reverse -%}
+      <div class="carousel-item  m-5">
+        {% include
+      "article-snippet.njk" %}
+      </div>
+    {%- endfor -%}
 
-</ul>
-
+  </div>
 </div>
