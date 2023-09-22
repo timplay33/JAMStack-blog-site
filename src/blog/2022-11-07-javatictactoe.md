@@ -9,7 +9,7 @@ tags:
 image: /assets/blog/javatictactoe_img1.png
 imageAlt: picture of the program
 ---
-# JavaTicTacToe
+## JavaTicTacToe
 
 Java, a high-level, class-based, object-oriented programming language and also the programming language used for Minecraft, one of the most popular games ever.
 
