@@ -400,4 +400,4 @@ Thanks for reading!
 \
 The finished project can be seen on my GitHub at <https://github.com/timplay33/simple-static-blog>
 
-[](https://github.com/timplay33/simple-static-blog)more of my stuff at [heidler.eu.org](https://heidler.eu.org/)
+[](https://github.com/timplay33/simple-static-blog)more of my stuff at [heidler.site](https://heidler.site/)
